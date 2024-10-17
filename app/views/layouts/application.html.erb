@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title><%= content_for(:title) || "Mon Portfolio" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -13,8 +14,12 @@
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <meta name="description" content="Portfolio de RomainB, développeur full-stack Ruby on Rails. Découvrez mes compétences et projets.">
+    <meta name="keywords" content="Développement web, Ruby on Rails, JavaScript, HTML, CSS, Portfolio, Programmation">
+    <meta name="author" content="RomainB">
+
   </head>
 
   <body>
