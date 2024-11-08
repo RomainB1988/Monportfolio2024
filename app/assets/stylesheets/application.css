@@ -125,3 +125,64 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+/* A propos */
+.parallax {
+  background-image: url('codescreen.PNG'); /* Image de fond */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  padding: 50px 0;
+  position: relative;
+}
+
+.parallax h1, .parallax p, .parallax a {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.parallax.visible h1, .parallax.visible p, .parallax.visible a {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Formulaire dynamique */
+form .form-control {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form .form-control:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 8px rgba(0, 86, 179, 0.3);
+}
+
+/* Message de confirmation */
+#confirmation-message {
+  display: none;
+  color: #28a745;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* Animation au survol des cartes de projets */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Agrandit légèrement la carte */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ajoute une ombre */
+}
+/* Effet de fade-in pour les compétences */
+.skill {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.skill.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
