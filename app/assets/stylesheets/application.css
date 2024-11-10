@@ -186,3 +186,21 @@ form .form-control:focus {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* CSS pour les Barres de Progression */
+.progress-bar-container {
+  background-color: #e9ecef;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 8px;
+  border-radius: 5px;
+  transition: width 0.5s ease;
+}
+
+.progress-bar.web { width: 90%; background-color: #0056b3; }
+.progress-bar.database { width: 75%; background-color: #ffc107; }
+.progress-bar.tools { width: 80%; background-color: #28a745; }
