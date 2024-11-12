@@ -32,19 +32,21 @@ body {
 
 /* Styles pour les boutons */
 .btn-primary {
-  background-color: #0056b3;
+  background-color: #387478; /* Couleur initiale du bouton */
+  color: white; /* Couleur du texte */
   border: none;
   padding: 10px 20px;
   transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: #ffc107;
+  background-color: #629584; /* Couleur au survol */
 }
+
 
 /* Header */
 header {
-  background-color: #0056b3;
+  background-color: #387478;
   color: white;
   animation: slidein 1s ease-out;
 }
@@ -187,7 +189,7 @@ form .form-control:focus {
   transform: translateY(0);
 }
 
-/* CSS pour les Barres de Progression */
+/* CSS pour les Barres de Progression Personnalisées */
 .progress-bar-container {
   background-color: #e9ecef;
   border-radius: 5px;
@@ -196,11 +198,91 @@ form .form-control:focus {
 }
 
 .progress-bar {
+  width: 0; /* Départ de l'animation */
   height: 8px;
   border-radius: 5px;
-  transition: width 0.5s ease;
+  transition: width 1s ease;
 }
 
-.progress-bar.web { width: 90%; background-color: #0056b3; }
-.progress-bar.database { width: 75%; background-color: #ffc107; }
-.progress-bar.tools { width: 80%; background-color: #28a745; }
+/* Largeurs et couleurs spécifiques pour chaque compétence */
+.progress-bar.rails { width: 80%; background-color: #243642; }      /* Ruby on Rails */
+.progress-bar.html-css { width: 80%; background-color: #243642; }   /* HTML/CSS */
+.progress-bar.javascript { width: 75%; background-color: #243642; } /* JavaScript */
+.progress-bar.postgresql { width: 75%; background-color: #00758f; } /* PostgreSQL */
+.progress-bar.mysql { width: 70%; background-color: #00758f; }      /* MySQL */
+.progress-bar.git-github { width: 90%; background-color: #629584; } /* Git et GitHub */
+.progress-bar.heroku { width: 65%; background-color: #629584; }     /* Docker */
+
+/* Animation pour déclencher le remplissage lorsque la section est visible */
+.skill.visible .progress-bar.rails { width: 80%; }
+.skill.visible .progress-bar.html-css { width: 80%; }
+.skill.visible .progress-bar.javascript { width: 75%; }
+.skill.visible .progress-bar.postgresql { width: 75%; }
+.skill.visible .progress-bar.mysql { width: 70%; }
+.skill.visible .progress-bar.git-github { width: 90%; }
+.skill.visible .progress-bar.heroku { width: 65%; }
+
+
+/* Fond pour chaque section */
+body {
+  background-color: #f4f4f9; /* Fond général */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Section À propos */
+#about {
+  background-color: #f9f7f3; /* Beige doux */
+  color: #333; /* Couleur du texte pour le contraste */
+  padding: 100px 0;
+}
+
+/* Section Compétences */
+#skills {
+  background-color: #CBD2A4; /* Bleu pastel */
+  color: #333;
+  padding: 100px 0;
+}
+
+/* Section Projets */
+#projects {
+  background-color: #f4f4f9; /* Gris clair, fond général */
+  color: #333;
+  padding: 100px 0;
+}
+
+/* Section Contact */
+#contact {
+  background-color: #F5F5DC; /* Beige doux */
+  color: #333;
+  padding: 100px 0;
+}
+
+/* Footer */
+footer {
+  background-color: #0056b3; /* Bleu foncé */
+  color: white;
+  padding: 20px 0;
+}
+
+/* Styles pour les liens */
+a {
+  color: #0056b3;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ffc107;
+}
+
+/* Couleurs personnalisées pour les titres */
+#skills .title-web {
+  color: #0a0a0a; /* Couleur pour "Développement Web" */
+}
+
+#skills .title-database {
+  color: #030404; /* Couleur pour "Base de données" */
+}
+
+#skills .title-tools {
+  color: #080808; /* Couleur pour "Outils" */
+}
