@@ -211,7 +211,7 @@ form .form-control:focus {
 .progress-bar.postgresql { width: 75%; background-color: #00758f; } /* PostgreSQL */
 .progress-bar.mysql { width: 70%; background-color: #00758f; }      /* MySQL */
 .progress-bar.git-github { width: 90%; background-color: #629584; } /* Git et GitHub */
-.progress-bar.heroku { width: 65%; background-color: #629584; }     /* Docker */
+.progress-bar.heroku { width: 65%; background-color: #629584; }     /* Heroku */
 
 /* Animation pour déclencher le remplissage lorsque la section est visible */
 .skill.visible .progress-bar.rails { width: 80%; }
