@@ -286,3 +286,7 @@ a:hover {
 #skills .title-tools {
   color: #080808; /* Couleur pour "Outils" */
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
