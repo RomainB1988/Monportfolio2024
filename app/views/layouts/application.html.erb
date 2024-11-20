@@ -44,6 +44,7 @@
         }
       });
     </script>
+
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const form = document.getElementById('contact-form');
@@ -60,17 +61,19 @@
     </script>
 
     <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const skills = document.querySelectorAll('.skill');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-    skills.forEach(skill => observer.observe(skill));
-  });
+    document.addEventListener('DOMContentLoaded', () => {
+      const skills = document.querySelectorAll('.skill'); // Sélectionne toutes les compétences
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible'); // Ajoute la classe `visible`
+          }
+        });
+      }, { threshold: 0.1 }); // Déclenche quand 10% de l'élément est visible
+
+      skills.forEach(skill => observer.observe(skill));
+    });
+
 </script>
 
 <script>
@@ -96,6 +99,20 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<!-- JavaScript pour les animations Apparition Progressives des Projets -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const projectCards = document.querySelectorAll('.project-card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  projectCards.forEach(card => observer.observe(card));
+});
+</script>
 
   </body>
 </html>
