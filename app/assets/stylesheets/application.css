@@ -1,28 +1,11 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
- @import "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css";
+/* Import Bootstrap */
+@import "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css";
 
- /*
- *= require_tree .
- *= require_self
-*/
-
-/* Animation de fade-in */
+/* Effet de fade-in pour la page */
 body {
   animation: fadein 2s;
+  font-family: 'Poppins', sans-serif; /* Police par défaut */
+  background-color: #f4f4f9; /* Fond général */
 }
 
 @keyframes fadein {
@@ -30,32 +13,16 @@ body {
   to   { opacity: 1; }
 }
 
-/* Styles pour les boutons */
-.btn-primary {
-  background-color: #387478; /* Couleur initiale du bouton */
-  color: white; /* Couleur du texte */
-  border: none;
-  padding: 10px 20px;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #629584; /* Couleur au survol */
-}
-
-
 /* Header */
-
 header {
-  position: sticky; /* Rend la navbar collante */
-  top: 0; /* Place la navbar toujours en haut */
-  z-index: 1030; /* Assure qu'elle reste au-dessus des autres éléments */
-  background-color: #387478; /* Assure un fond si transparent */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajoute une légère ombre */
+  position: sticky; /* Navbar collante */
+  top: 0;
+  z-index: 1030;
+  background-color: #387478;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   color: white;
   animation: slidein 1s ease-out;
 }
-
 
 .nav-link {
   margin-left: 20px;
@@ -71,11 +38,23 @@ header {
   to   { transform: translateY(0); }
 }
 
+/* Boutons */
+.btn-primary {
+  background-color: #387478;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
+.btn-primary:hover {
+  background-color: #629584;
+  transform: scale(1.1);
+}
 
-/* Section "about" */
+/* Section "À propos" */
 #about {
-  background-color: #f8f9fa;
+  background-color: #f9f7f3;
   padding: 100px 0;
 }
 
@@ -88,36 +67,99 @@ header {
   color: #6c757d;
 }
 
-/* Section "skills" */
+/* Section "Compétences" */
 #skills {
-  background-color: white;
+  background-color: #CBD2A4;
+  padding: 100px 0;
 }
 
 #skills h2 {
   font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-#skills h4 {
-  color: #0056b3;
+.skill {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-#skills ul {
-  list-style: none;
-  padding: 0;
+.skill.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-#skills ul li {
-  padding: 5px 0;
-  color: #6c757d;
+.skill-icon {
+  font-size: 3rem;
+  color: #387478;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Section "projects" */
+.skill-icon:hover {
+  transform: scale(1.2);
+  color: #629584;
+}
+
+.skill h5 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.skill:hover h5 {
+  color: #629584;
+}
+
+/* Section "Projets" */
 #projects {
-  background-color: #f8f9fa;
+  background-color: #f4f4f9;
+  padding: 100px 0;
+}
+
+.project-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card-title {
   color: #0056b3;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Section "Contact" */
+#contact {
+  background-color: #F5F5DC;
+  padding: 100px 0;
+}
+
+form .form-control {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form .form-control:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 8px rgba(0, 86, 179, 0.3);
+}
+
+#confirmation-message {
+  display: none;
+  color: #28a745;
+  font-weight: bold;
+  margin-top: 15px;
 }
 
 /* Footer */
@@ -125,6 +167,7 @@ footer {
   background-color: #0056b3;
   color: white;
   padding: 20px 0;
+  text-align: center;
 }
 
 footer a {
@@ -136,175 +179,14 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* A propos */
-.parallax {
-  background-image: url('codescreen.PNG'); /* Image de fond */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
-  padding: 50px 0;
-  position: relative;
+/* Effets spécifiques */
+.fas {
+  transition: transform 0.3s ease;
 }
 
-.parallax h1, .parallax p, .parallax a {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
+.fas:hover {
+  transform: rotate(360deg);
 }
-
-.parallax.visible h1, .parallax.visible p, .parallax.visible a {
-  opacity: 1;
-  transform: translateY(0);
-}
-/* Formulaire dynamique */
-form .form-control {
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-form .form-control:focus {
-  border-color: #0056b3;
-  box-shadow: 0 0 8px rgba(0, 86, 179, 0.3);
-}
-
-/* Message de confirmation */
-#confirmation-message {
-  display: none;
-  color: #28a745;
-  font-weight: bold;
-  margin-top: 15px;
-}
-
-/* Animation au survol des cartes de projets */
-.card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: scale(1.05); /* Agrandit légèrement la carte */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ajoute une ombre */
-}
-
-
-/* CSS pour les Barres de Progression Personnalisées */
-.progress-bar-container {
-  background-color: #e9ecef;
-  border-radius: 5px;
-  overflow: hidden;
-  margin-top: 10px;
-}
-
-.progress-bar {
-  width: 0; /* Départ de l'animation */
-  height: 8px;
-  border-radius: 5px;
-  transition: width 1s ease;
-}
-.progress-bar:hover {
-  background: linear-gradient(90deg, #629584, #387478); /* Inverse le dégradé */
-}
-/* Largeurs et couleurs spécifiques pour chaque compétence */
-.progress-bar.rails { width: 80%; background-color: #243642; }      /* Ruby on Rails */
-.progress-bar.html-css { width: 80%; background-color: #243642; }   /* HTML/CSS */
-.progress-bar.javascript { width: 75%; background-color: #243642; } /* JavaScript */
-.progress-bar.postgresql { width: 75%; background-color: #00758f; } /* PostgreSQL */
-.progress-bar.mysql { width: 70%; background-color: #00758f; }      /* MySQL */
-.progress-bar.git-github { width: 90%; background-color: #629584; } /* Git et GitHub */
-.progress-bar.heroku { width: 65%; background-color: #629584; }     /* Heroku */
-
-/* Effet de fade-in pour les compétences */
-.skill {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.skill.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-/* Animation pour déclencher le remplissage lorsque la section est visible */
-.skill.visible .progress-bar.rails { width: 80%; }
-.skill.visible .progress-bar.html-css { width: 80%; }
-.skill.visible .progress-bar.javascript { width: 75%; }
-.skill.visible .progress-bar.postgresql { width: 75%; }
-.skill.visible .progress-bar.mysql { width: 70%; }
-.skill.visible .progress-bar.git-github { width: 90%; }
-.skill.visible .progress-bar.heroku { width: 65%; }
-
-
-
-
-/* Fond pour chaque section */
-body {
-  background-color: #f4f4f9; /* Fond général */
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Section À propos */
-#about {
-  background-color: #f9f7f3; /* Beige doux */
-  color: #333; /* Couleur du texte pour le contraste */
-  padding: 100px 0;
-}
-
-/* Section Compétences */
-#skills {
-  background-color: #CBD2A4; /* Bleu pastel */
-  color: #333;
-  padding: 100px 0;
-}
-
-/* Section Projets */
-#projects {
-  background-color: #f4f4f9; /* Gris clair, fond général */
-  color: #333;
-  padding: 100px 0;
-}
-
-/* Section Contact */
-#contact {
-  background-color: #F5F5DC; /* Beige doux */
-  color: #333;
-  padding: 100px 0;
-}
-
-/* Footer */
-footer {
-  background-color: #0056b3; /* Bleu foncé */
-  color: white;
-  padding: 20px 0;
-}
-
-/* Styles pour les liens */
-a {
-  color: #0056b3;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #ffc107;
-}
-
-/* Couleurs personnalisées pour les titres */
-#skills .title-web {
-  color: #0a0a0a; /* Couleur pour "Développement Web" */
-}
-
-#skills .title-database {
-  color: #030404; /* Couleur pour "Base de données" */
-}
-
-#skills .title-tools {
-  color: #080808; /* Couleur pour "Outils" */
-}
-
-body {
-  font-family: 'Roboto Mono', monospace;
-}
-
-/* Animation Typewriter pour le Texte */
 
 .typewriter {
   overflow: hidden;
@@ -321,36 +203,4 @@ body {
 @keyframes blink {
   from { border-color: transparent; }
   to { border-color: #387478; }
-}
-
-/* Animation de Scale pour le Bouton de Contact */
-
-.btn-primary {
-  transition: transform 0.3s ease;
-}
-
-.btn-primary:hover {
-  transform: scale(1.1);
-}
-
-/* Effet de Rotation pour les Icônes */
-
-.fas {
-  transition: transform 0.3s ease;
-}
-
-.fas:hover {
-  transform: rotate(360deg);
-}
-
-/* Apparition Progressives des Projets */
-.project-card {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.project-card.visible {
-  opacity: 1;
-  transform: translateY(0);
 }

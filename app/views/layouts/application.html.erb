@@ -5,15 +5,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <title><%= content_for(:title) || "Mon Portfolio" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="mobile-web-app-capable" content="yes"> <!-- Nouvelle balise -->
+    <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= yield :head %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous">
-
-
-
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
@@ -28,91 +25,58 @@
   <body>
     <%= yield %>
 
-    <!-- JavaScript pour les animations et la gestion du formulaire -->
+    <!-- JavaScript pour les animations et la gestion des compétences -->
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const parallaxSection = document.querySelector('.parallax');
-        if (parallaxSection) {
-          const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                parallaxSection.classList.add('visible');
-              }
-            });
-          }, { threshold: 0.5 });
-          observer.observe(parallaxSection);
-        }
-      });
-    </script>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const form = document.getElementById('contact-form');
-        const confirmationMessage = document.getElementById('confirmation-message');
-
-        if (form) {
-          form.addEventListener('submit', (event) => {
-            event.preventDefault();
-            confirmationMessage.style.display = 'block';
-            form.reset();
+        // Animation pour les compétences
+        const skills = document.querySelectorAll('.skill');
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
           });
-        }
+        }, { threshold: 0.1 });
+
+        skills.forEach(skill => observer.observe(skill));
+
+        // Smooth scroll pour la navbar
+        const links = document.querySelectorAll('a[href^="#"]');
+        links.forEach(link => {
+          link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        });
       });
     </script>
 
+    <!-- Tooltip Bootstrap -->
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const skills = document.querySelectorAll('.skill'); // Sélectionne toutes les compétences
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible'); // Ajoute la classe `visible`
-          }
-        });
-      }, { threshold: 0.1 }); // Déclenche quand 10% de l'élément est visible
-
-      skills.forEach(skill => observer.observe(skill));
-    });
-
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const links = document.querySelectorAll('a[href^="#"]');
-    links.forEach(link => {
-      link.addEventListener('click', function(event) {
-        event.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth' });
-        }
+      document.addEventListener('DOMContentLoaded', () => {
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        const tooltipList = tooltipTriggerList.map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
       });
-    });
-  });
-</script>
+    </script>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-  const tooltipList = tooltipTriggerList.map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-});
-</script>
-
-<!-- JavaScript pour les animations Apparition Progressives des Projets -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const projectCards = document.querySelectorAll('.project-card');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-  projectCards.forEach(card => observer.observe(card));
-});
-</script>
+    <!-- Animation pour les projets -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const projectCards = document.querySelectorAll('.project-card');
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, { threshold: 0.1 });
+        projectCards.forEach(card => observer.observe(card));
+      });
+    </script>
 
   </body>
 </html>
