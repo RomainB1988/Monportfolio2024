@@ -13,7 +13,7 @@
 
 <section id="about" class="parallax text-center py-5">
   <div class="container">
-    <h1 class="typewriter">< Hello ! Je suis développeur Full Stack /></h1>
+    <h1 class="typewriter">< Développeur Full Stack /></h1>
     <p class="lead"> < Je m'appelle Romain, développeur full-stack avec une forte expertise en Ruby on Rails, JavaScript, et les technologies modernes de développement web. Passionné par l'innovation et le code propre, je crée des applications robustes et évolutives, en mettant l'accent sur l'expérience utilisateur et la performance.
 
     Avec un parcours qui m'a permis de maîtriser chaque étape du développement, de la conception d'API jusqu'à l'intégration front-end, je cherche à offrir des solutions efficaces et adaptées aux besoins des utilisateurs. Mes compétences s'étendent du développement backend en Ruby on Rails à la création d'interfaces dynamiques avec JavaScript, toujours dans une approche collaborative et agile.
@@ -76,16 +76,11 @@
   </div>
 </section>
 
-
-
-
-
-
-
 <section id="projects" class="py-5 bg-light">
   <div class="container">
     <h2 class="text-center mb-5">Mes projets</h2>
     <div class="row">
+      <!-- Projet 1 -->
       <div class="col-md-6 project-card">
         <div class="card mb-4">
           <img src="lien_image_airbnb_clone.jpg" class="card-img-top" alt="Projet Airbnb Clone">
@@ -99,23 +94,44 @@
           </div>
         </div>
       </div>
+      <!-- Projet 2 avec Carousel -->
       <div class="col-md-6 project-card">
         <div class="card mb-4">
-          <img src="lien_image_projet2.jpg" class="card-img-top" alt="Projet 2">
+          <!-- Carousel pour Glass Collect -->
+          <div id="carouselGlassCollect" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <%= image_tag 'Glasscollect.PNG', class: 'd-block w-100', alt: 'Image principale du projet' %>
+              </div>
+              <div class="carousel-item">
+                <%= image_tag 'Glasscollect2.PNG', class: 'd-block w-100', alt: 'Seconde image' %>
+              </div>
+            </div>
+            <!-- Contrôles pour le carousel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselGlassCollect" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Précédent</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselGlassCollect" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Suivant</span>
+            </button>
+          </div>
           <div class="card-body">
-            <h5 class="card-title">Nom du Projet 2</h5>
+            <h5 class="card-title">Glass Collect</h5>
             <p class="card-text">
-              Une description complète du projet 2, expliquant son but, ses fonctionnalités, et les technologies utilisées.
-              <br><strong>Technologies utilisées : </strong> React, Node.js, MongoDB
+              Glass Collect est une application web développée en Ruby on Rails, conçue pour faciliter la collecte et le recyclage du verre. Elle permet aux utilisateurs de localiser les points de collecte les plus proches, de suivre leurs contributions et de recevoir des notifications sur les horaires de collecte.
+              L'interface intuitive, construite avec HTML, SCSS et JavaScript, offre une expérience utilisateur fluide et engageante.
+              <br><strong>Technologies utilisées : </strong> Ruby on Rails, PostgreSQL, SCSS, JavaScript (ES6), Stimulus, Mapbox
             </p>
-            <a href="https://github.com/RomainB1988/projet2" class="btn btn-primary">Voir sur GitHub</a>
-            <a href="lien_deploiement" class="btn btn-secondary">Voir le site</a>
+            <a href="https://github.com/catherine-guyot/glass_collect" class="btn btn-primary">Voir sur GitHub</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 <section id="contact" class="py-5">
   <div class="container">
     <h2 class="text-center mb-5">Contactez-moi</h2>
