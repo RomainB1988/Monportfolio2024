@@ -1,5 +1,16 @@
 {
+  "name": "mon_portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio de Romain",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack"
+  },
   "dependencies": {
     "bootstrap": "^5.3.3"
-  }
+  },
+  "devDependencies": {},
+  "author": "Romain B",
+  "license": "ISC"
 }
