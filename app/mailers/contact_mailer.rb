@@ -1,11 +1,14 @@
 class ContactMailer < ApplicationMailer
-  def contact_email(contact_params)
-    @name = contact_params[:name]
-    @message = contact_params[:message]
+  default from: ENV["EMAIL_USERNAME"]
+
+  # Méthode pour envoyer un email de contact
+  def contact_email(name, email, message)
+    @name = name
+    @message = message
 
     mail(
-      to: "rom.buisine@gmail.com",
-      subject: "Nouveau message de votre portfolio"
+      to: ENV["EMAIL_USERNAME"], # Votre adresse e-mail pour recevoir les messages
+      subject: "Nouveau message de #{@name} via le formulaire de contact"
     )
   end
 end

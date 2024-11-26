@@ -10,19 +10,19 @@
   </nav>
 </header>
 
-
 <section id="about" class="parallax text-center py-5">
   <div class="container">
     <h1 class="typewriter">< Développeur Full Stack /></h1>
-    <p class="lead mt-5"> < Je m'appelle Romain, développeur full-stack avec une forte expertise en Ruby on Rails, JavaScript, et les technologies modernes de développement web. Passionné par l'innovation et le code propre, je crée des applications robustes et évolutives, en mettant l'accent sur l'expérience utilisateur et la performance.
+    <p class="lead mt-5">
+      Je m'appelle Romain, développeur full-stack avec une forte expertise en Ruby on Rails, JavaScript, et les technologies modernes de développement web. Passionné par l'innovation et le code propre, je crée des applications robustes et évolutives, en mettant l'accent sur l'expérience utilisateur et la performance.
 
-    Avec un parcours qui m'a permis de maîtriser chaque étape du développement, de la conception d'API jusqu'à l'intégration front-end, je cherche à offrir des solutions efficaces et adaptées aux besoins des utilisateurs. Mes compétences s'étendent du développement backend en Ruby on Rails à la création d'interfaces dynamiques avec JavaScript, toujours dans une approche collaborative et agile.
+      Avec un parcours qui m'a permis de maîtriser chaque étape du développement, de la conception d'API jusqu'à l'intégration front-end, je cherche à offrir des solutions efficaces et adaptées aux besoins des utilisateurs. Mes compétences s'étendent du développement backend en Ruby on Rails à la création d'interfaces dynamiques avec JavaScript, toujours dans une approche collaborative et agile.
 
-    Je vous invite à découvrir mes projets et compétences à travers ce portfolio, reflet de mon engagement pour un code de qualité et un design centré sur l'utilisateur. /></p>
+      Je vous invite à découvrir mes projets et compétences à travers ce portfolio, reflet de mon engagement pour un code de qualité et un design centré sur l'utilisateur.
+    </p>
     <a href="#contact" class="btn btn-primary">Contactez-moi</a>
   </div>
 </section>
-
 
 <section id="skills" class="py-5">
   <div class="container">
@@ -97,17 +97,15 @@
       <!-- Projet 2 avec Carousel -->
       <div class="col-md-6 project-card">
         <div class="card mb-4">
-        <div id="carouselGlassCollect" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active text-center">
-            <%= image_tag 'Glasscollect.PNG', class: 'd-block mx-auto w-50', alt: 'Image principale du projet' %>
-          </div>
-          <div class="carousel-item text-center">
-            <%= image_tag 'Glasscollect2.PNG', class: 'd-block mx-auto w-50', alt: 'Seconde image' %>
-          </div>
-        </div>
-      </div>
-
+          <div id="carouselGlassCollect" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active text-center">
+                <%= image_tag 'Glasscollect.PNG', class: 'd-block mx-auto w-50', alt: 'Image principale du projet' %>
+              </div>
+              <div class="carousel-item text-center">
+                <%= image_tag 'Glasscollect2.PNG', class: 'd-block mx-auto w-50', alt: 'Seconde image' %>
+              </div>
+            </div>
             <!-- Contrôles pour le carousel -->
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselGlassCollect" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -137,30 +135,27 @@
   <div class="container">
     <h2 class="text-center mb-5">Contactez-moi</h2>
     <div class="text-center my-4">
-  <i class="fas fa-envelope"></i>
-  <a href="mailto:rom.buisine@gmail.com" class="text-dark ms-2">rom.buisine@gmail.com</a>
-</div>
+      <i class="fas fa-envelope"></i>
+      <a href="mailto:rom.buisine@gmail.com" class="text-dark ms-2">rom.buisine@gmail.com</a>
+    </div>
+    <%= form_with url: send_contact_message_path, method: :post, local: true do |f| %>
+  <div class="mb-3">
+    <label for="name" class="form-label">Nom</label>
+    <%= f.text_field :name, class: "form-control", required: true %>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <%= f.email_field :email, class: "form-control", required: true %>
+  </div>
+  <div class="mb-3">
+    <label for="message" class="form-label">Message</label>
+    <%= f.text_area :message, class: "form-control", rows: 5, required: true %>
+  </div>
+  <button type="submit" class="btn btn-primary">Envoyer</button>
+<% end %>
 
-    <form id="contact-form">
-      <div class="mb-3">
-        <label for="name" class="form-label">Nom</label>
-        <input type="text" class="form-control" id="name" name="name" required>
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" name="email" required>
-      </div>
-      <div class="mb-3">
-        <label for="message" class="form-label">Message</label>
-        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Envoyer</button>
-      <p id="confirmation-message">Merci, votre message a été envoyé !</p>
-    </form>
   </div>
 </section>
-
-
 
 <footer class="bg-dark text-light py-4">
   <div class="container text-center">

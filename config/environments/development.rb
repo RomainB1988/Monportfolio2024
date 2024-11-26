@@ -80,16 +80,15 @@ Rails.application.configure do
   # config.generators.apply_rubocop_autocorrect_after_generate!
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'example.com',
-    user_name:            'portfoliobuisine@gmail.com',
-    password:             'x k p j w g x l g k j x z a m g',
-    authentication:       'plain',
-    enable_starttls_auto: true
-  }
+  address:              'smtp.gmail.com',
+  port:                 587,
+  domain:               'example.com',
+  user_name:            ENV['EMAIL_USERNAME'],
+  password:             ENV['EMAIL_PASSWORD'],
+  authentication:       'plain',
+  enable_starttls_auto: true
+}
+
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-
-
 end
