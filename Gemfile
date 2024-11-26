@@ -15,6 +15,7 @@ gem "jbuilder"
 group :development do
   gem "sqlite3", ">= 1.4" # SQLite est utilisé uniquement en développement
   gem "web-console"
+
 end
 
 group :development, :test do
@@ -35,8 +36,4 @@ gem "bootsnap", require: false
 
 group :production do
   gem 'pg', '>= 1.1' # PostgreSQL pour Heroku
-end
-
-group :development, :production do
-  gem 'dotenv-rails'
 end
