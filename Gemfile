@@ -36,3 +36,7 @@ gem "bootsnap", require: false
 group :production do
   gem 'pg', '>= 1.1' # PostgreSQL pour Heroku
 end
+
+group :development, :production do
+  gem 'dotenv-rails'
+end
