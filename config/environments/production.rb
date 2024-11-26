@@ -32,7 +32,7 @@ Rails.application.configure do
   config.serve_static_assets = true
   config.assets.digest = true
   config.force_ssl = true
-
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
