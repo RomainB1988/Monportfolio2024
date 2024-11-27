@@ -2,9 +2,6 @@ Rails.application.routes.draw do
   root 'pages#home' # Page d'accueil
   post "send_contact_message", to: "contacts#create", as: "send_contact_message"
 
-  # Ressource contacts (formulaire de contact)
-  resources :contacts, only: [:new, :create]
-
   # Routes pour les services de santé (Health check) et PWA
   get "up" => "rails/health#show", as: :rails_health_check
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
