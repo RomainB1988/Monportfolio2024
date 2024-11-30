@@ -205,12 +205,8 @@ footer a:hover {
   to { border-color: #387478; }
 }
 
+
 .project-card img {
-  max-height: 10px;
-  object-fit: contain;
-  width: 100%;
-}
-/* .project-card img {
   max-width: 100%;
   height: auto;
-} */
+}
