@@ -3,11 +3,12 @@
   <head>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <title><%= content_for(:title) || "Mon Portfolio" %></title>
+    <title><%= content_for(:title) || "Romain Buisine Portfolio Dev FullStack" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= favicon_link_tag 'favicon.png' %>
 
     <%= yield :head %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous">
