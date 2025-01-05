@@ -1,6 +1,7 @@
 require_relative "boot"
 
 require "rails/all"
+require 'dotenv' if Rails.env.development? || Rails.env.test?
 
 
 # Charger dotenv uniquement pour les environnements locaux (développement et test)
