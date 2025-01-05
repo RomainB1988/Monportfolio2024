@@ -11,6 +11,7 @@ gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development do
   gem "sqlite3", ">= 1.4" # SQLite est utilisé uniquement en développement
@@ -22,7 +23,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "brakeman", require: false
   gem "rubocop-rails-omakase", require: false
-  gem 'dotenv-rails', groups: [:development, :test]
+
 
 end
 
