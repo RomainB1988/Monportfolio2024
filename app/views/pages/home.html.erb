@@ -100,7 +100,7 @@
           <div id="carouselGlassCollect" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active text-center">
-              <%= image_tag 'Glasscollect.PNG', class: 'd-block mx-auto w-50', alt: 'Image principale du projet' %>
+                <%= image_tag 'Glasscollect.PNG', class: 'd-block mx-auto w-50', alt: 'Image principale du projet' %>
               </div>
               <div class="carousel-item text-center">
                 <%= image_tag 'Glasscollect2.PNG', class: 'd-block mx-auto w-50', alt: 'Seconde image' %>
@@ -127,6 +127,21 @@
           </div>
         </div>
       </div>
+      <!-- Projet Random Quote Generator -->
+      <div class="col-md-6 project-card">
+        <div class="card mb-4">
+          <img src="<%= asset_path('randomquotegenerator.PNG') %>" class="card-img-top" alt="Random Quote Generator">
+          <div class="card-body">
+            <h5 class="card-title">Random Quote Generator</h5>
+            <p class="card-text">
+              Une application web simple qui génère des citations aléatoires à chaque clic. Le design moderne et épuré offre une expérience utilisateur agréable.
+              <br><strong>Technologies utilisées : </strong> HTML, CSS, JavaScript
+            </p>
+            <a href="https://github.com/RomainB1988/random-quote-generator" class="btn btn-primary">Voir sur GitHub</a>
+            <a href="https://romainb1988.github.io/random-quote-generator/" class="btn btn-secondary">Voir en ligne</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -140,20 +155,20 @@
       <a href="/cv_romain_buisine.pdf" class="btn btn-primary" download>Télécharger mon CV</a>
     </div>
     <%= form_with url: send_contact_message_path, method: :post, local: true, scope: :contact do |f| %>
-  <div class="mb-3">
-    <label for="name" class="form-label">Nom</label>
-    <%= f.text_field :name, class: "form-control", required: true %>
-  </div>
-  <div class="mb-3">
-    <label for="email" class="form-label">Email</label>
-    <%= f.email_field :email, class: "form-control", required: true %>
-  </div>
-  <div class="mb-3">
-    <label for="message" class="form-label">Message</label>
-    <%= f.text_area :message, class: "form-control", rows: 5, required: true %>
-  </div>
-  <button type="submit" class="btn btn-primary">Envoyer</button>
-<% end %>
+      <div class="mb-3">
+        <label for="name" class="form-label">Nom</label>
+        <%= f.text_field :name, class: "form-control", required: true %>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <%= f.email_field :email, class: "form-control", required: true %>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <%= f.text_area :message, class: "form-control", rows: 5, required: true %>
+      </div>
+      <button type="submit" class="btn btn-primary">Envoyer</button>
+    <% end %>
   </div>
 </section>
 

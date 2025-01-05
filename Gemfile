@@ -22,7 +22,8 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "brakeman", require: false
   gem "rubocop-rails-omakase", require: false
-  gem "dotenv-rails", "~> 3.1.1"
+  gem 'dotenv-rails', groups: [:development, :test]
+
 end
 
 group :test do
