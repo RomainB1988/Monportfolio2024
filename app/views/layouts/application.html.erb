@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="light">
   <head>
+    <meta charset="UTF-8" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <title><%= content_for(:title) || "Romain Buisine Portfolio Dev FullStack" %></title>
@@ -24,7 +25,30 @@
   </head>
 
   <body>
-    <%= yield %>
+
+  <%= yield %>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeIcon = document.getElementById("theme-icon");
+
+  if (themeToggle) {
+    const currentTheme = localStorage.getItem("theme") || "light";
+    document.documentElement.setAttribute("data-theme", currentTheme);
+    themeIcon.textContent = currentTheme === "dark" ? "☀️" : "🌙";
+    console.log(`Thème initial : ${currentTheme}`);
+
+    themeToggle.addEventListener("click", () => {
+      const newTheme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+      themeIcon.textContent = newTheme === "dark" ? "☀️" : "🌙";
+      console.log(`Thème activé : ${newTheme}`);
+    });
+  }
+});
+</script>
 
     <!-- JavaScript pour les animations et la gestion des compétences -->
     <script>
@@ -79,6 +103,7 @@
       });
     </script>
 
+    <!-- JavaScript pour le formulaire de contact -->
     <% if flash[:notice] %>
   <div class="alert alert-success">
     <%= flash[:notice] %>
